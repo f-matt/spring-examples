@@ -13,7 +13,7 @@
  	<mvc:annotation-driven/>
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	
-	<context:component-scan base-package="org.test.spring.postarray.controller" />
+	<context:component-scan base-package="examples" />
  
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -6,5 +6,6 @@
 
 	<body>
 		<div><a id="send-json" href="#" onclick="sendJson()">Send Json</a></div>
+		<div><a id="send-json" href="#" onclick="sendJsonArray()">Send Json Array</a></div>
 	</body>
 </html>

@@ -61,6 +61,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>spring-post-array</finalName>
+		<finalName>spring-json-array</finalName>
 	</build>
 </project>

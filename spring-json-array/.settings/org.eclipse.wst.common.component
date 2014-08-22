@@ -4,7 +4,7 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="spring-post-array"/>
         <property name="java-output-path" value="/spring-post-array/target/classes"/>
+        <property name="context-root" value="spring-json-array"/>
     </wb-module>
 </project-modules>
