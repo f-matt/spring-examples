@@ -88,7 +88,7 @@
 	<!-- Session Factory -->
 	<bean id="sessionFactory2"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="dataSource2" />
 		<property name="configLocation">
 			<value>WEB-INF/hibernate2.cfg.xml</value>
 		</property>
