@@ -1,8 +1,8 @@
 package x.y.service;
 
-import x.y.model.FooDto;
+import x.y.model.FooBarDto;
 
 public interface FooService {
-	FooDto getFoo(int id);
+	FooBarDto getFoo(int id);
 
 }

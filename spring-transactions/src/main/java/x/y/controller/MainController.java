@@ -6,7 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import x.y.model.FooDto;
+import x.y.model.FooBarDto;
 import x.y.service.FooService;
 
 @Controller
@@ -19,7 +19,7 @@ public class MainController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		
-		FooDto fooDto = fooService.getFoo(1);
+		FooBarDto fooDto = fooService.getFoo(1);
 		
 		System.out.println(fooDto.toString());
  

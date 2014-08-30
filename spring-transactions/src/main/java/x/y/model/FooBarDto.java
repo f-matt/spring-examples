@@ -1,6 +1,6 @@
 package x.y.model;
 
-public class FooDto {
+public class FooBarDto {
 	
 	private String id;
 	private String a;

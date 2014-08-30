@@ -4,29 +4,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import x.y.dao.BarDao;
 import x.y.dao.FooDao;
+import x.y.model.Bar;
 import x.y.model.Foo;
-import x.y.model.FooDto;
+import x.y.model.FooBarDto;
 
 @Service
-@Transactional
 public class FooServiceImpl implements FooService {
 
 	@Autowired
 	private FooDao fooDao;
 	
-	@Transactional
-	public FooDto getFoo(int id) {
+	@Autowired
+	private BarDao barDao;
+	
+	@Transactional(value = "transactionManager")
+	public FooBarDto getFoo(int id) {
 		Foo foo = fooDao.get(id);
 		
-		FooDto fooDto = new FooDto();
+		return createDto(foo);
+	}
+	
+	public FooBarDto createDto(Foo foo) {
 		
-		fooDto.setId(String.valueOf(foo.getId()));
-		fooDto.setA(String.valueOf(foo.getA()));
-		fooDto.setB(String.valueOf(foo.getB()));
+		Bar bar = barDao.get(foo.getId());
+				
+		FooBarDto fooBarDto = new FooBarDto();
+				
+		fooBarDto.setId(String.valueOf(foo.getId()));
+		fooBarDto.setA(String.valueOf(foo.getA()));
+		fooBarDto.setB(String.valueOf(foo.getB()));
+		fooBarDto.setC(String.valueOf(bar.getC()));
+		fooBarDto.setD(String.valueOf(bar.getD()));
 		
+		return fooBarDto;		
 		
-		return fooDto;
 	}
 	
 	
