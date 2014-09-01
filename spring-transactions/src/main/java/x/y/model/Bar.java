@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "t2")
 public class Bar {
@@ -43,7 +42,5 @@ public class Bar {
 	public void setD(int d) {
 		this.d = d;
 	}
-	
-	
 	
 }

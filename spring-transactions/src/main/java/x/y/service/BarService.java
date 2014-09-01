@@ -5,5 +5,4 @@ import x.y.model.FooBarDto;
 
 public interface BarService {
 	FooBarDto createDto(Foo foo);
-
 }

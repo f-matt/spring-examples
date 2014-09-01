@@ -18,11 +18,10 @@ public class MainController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
+		FooBarDto fooBarDto = fooService.createDto(1);
 		
-		FooBarDto fooDto = fooService.getFoo(1);
+		System.out.println(fooBarDto.toString());
 		
-		System.out.println(fooDto.toString());
- 
 		model.addAttribute("message", "Test ok");
 		return "output";
 	}

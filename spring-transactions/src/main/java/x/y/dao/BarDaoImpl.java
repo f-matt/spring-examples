@@ -15,7 +15,7 @@ public class BarDaoImpl implements BarDao {
 	@Autowired
 	@Qualifier("sessionFactory2")
 	private SessionFactory factory;
-
+	
 	public Bar get(int id) {
 		Session session = factory.getCurrentSession();
 
@@ -26,6 +26,5 @@ public class BarDaoImpl implements BarDao {
 		
 		return bar;
 	}
-
 
 }
