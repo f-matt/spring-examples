@@ -1,12 +1,16 @@
 package org.example.model;
 
-public class Foo {
+public class B {
 
 	private int id;
-
 	private String description;
-
-	private Bar bar;
+	
+	public B() {}
+	
+	public B(int id, String description) {
+		this.id = id;
+		this.description = description;
+	}
 
 	public int getId() {
 		return id;
@@ -23,13 +27,12 @@ public class Foo {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public Bar getBar() {
-		return bar;
+	
+	@Override
+	public String toString() {
+		return String.format("B:\n\tid: %d\n\tdescription: %s\n", id, description);
 	}
 
-	public void setBar(Bar bar) {
-		this.bar = bar;
-	}
+	
 
 }
