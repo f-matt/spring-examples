@@ -9,9 +9,11 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<spring.version>4.3.1.RELEASE</spring.version>
+		<spring.version>5.2.3.RELEASE</spring.version>
 		<hibernate.version>4.2.2.Final</hibernate.version>
 		<postgresql.version>9.1-901.jdbc4</postgresql.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -65,21 +67,21 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate.common</groupId>
 			<artifactId>hibernate-commons-annotations</artifactId>
 			<version>4.0.4.Final</version>
 		</dependency>
-		
+
 		<!-- Postgresql -->
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>${postgresql.version}</version>
 		</dependency>
-		
-		
+
+
 
 	</dependencies>
 	<build>
