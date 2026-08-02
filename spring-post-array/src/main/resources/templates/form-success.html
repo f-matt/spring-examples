@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Success!</title>
+	</head>
+
+	<body>
+		<div>Name: <span th:text="${name}"></span></div>
+
+		<div>
+			<ul>
+				<li th:each="value: ${values}"><span th:text="${value}"></span></li>
+			</ul>
+		</div>
+
+		<form th:action="@{/hello/addValue}" th:object="${formDto}" method="POST">
+			<label for="newValue">Value:</label>
+			<br/>
+
+			<input id="newValue" type="text" th:field="*{newValue}">
+			<br/>
+			<br/>
+
+			<input type="hidden" th:field="*{testModel.name}" />
+			<input type="hidden" th:each="value,iter: *{testModel.values}"
+				   th:field="*{testModel.values[__${iter.index}__]}" />
+
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

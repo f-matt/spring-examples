@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.test.spring.postarray.form.FormDto;
 import org.test.spring.postarray.model.TestModel;
 
 @Controller
@@ -37,9 +38,28 @@ public class MainController {
 		
 		model.addAttribute("name", name);
 		model.addAttribute("values", values);
-		
+
+		FormDto formDto = new FormDto();
+		formDto.setTestModel(testModel);
+
+		model.addAttribute("formDto", formDto);
+
 		return "form-success";
- 
+	}
+
+	@RequestMapping(value="addValue", method=RequestMethod.POST)
+	public String addValue(@ModelAttribute("formDto") FormDto formDto, ModelMap model) {
+		formDto.getTestModel().getValues().add(formDto.getNewValue());
+		formDto.setNewValue(null);
+
+		String name = formDto.getTestModel().getName();
+		List<String> values = formDto.getTestModel().getValues();
+
+		model.addAttribute("name", name);
+		model.addAttribute("values", values);
+		model.addAttribute("formDto", formDto);
+
+		return "form-success";
 	}
 
 }
